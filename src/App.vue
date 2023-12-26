@@ -1,17 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input />
+  <!-- focus goes to second input -->
+  <input ref="input" />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref, onMounted } from "vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const input = ref(null);
+
+onMounted(() => {
+  // it goes becaus of this code
+  input.value.focus();
+});
 </script>
 
 <style>
